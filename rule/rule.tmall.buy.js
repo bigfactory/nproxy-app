@@ -1,12 +1,12 @@
 
-var proxy = require('./lib');
+var proxy = require('nproxy-plus');
 
 module.exports = [
     {
-        pattern : 'http://g.assets.daily.taobao.net/??tm/buy-base/1.3.3/seed.js,tm/buy/1.1.2/seed.js,tm/buy/1.1.2/mio.js',
+        pattern : 'http://g.assets.daily.taobao.net/??tm/buy-base/1.3.4/seed.js,tm/buy/1.1.3/seed.js,tm/buy/1.1.3/mio.js',
         responder : proxy.mix(
             
-            proxy.route('fetch', 'http://g.assets.daily.taobao.net/??tm/buy-base/1.3.3/seed.js'),
+            proxy.route('fetch', 'http://g.assets.daily.taobao.net/??tm/buy-base/1.3.4/seed.js'),
             proxy.route('local', '/gitlab/tm/buy/src/seed.js'),
             proxy.route('local', '/gitlab/tm/buy/src/mio.js')
             /*proxy.route('concat', {
@@ -39,7 +39,7 @@ module.exports = [
 
 
     {
-        pattern : 'http://g.tbcdn.cn/tm/buy/1.1.2/??',
+        pattern : '/tm/buy/1.1.9/??',
         responder : 'combo',
         options : {
           base: '/gitlab/tm/buy/src/'
@@ -47,7 +47,7 @@ module.exports = [
     },
 
     {
-        pattern : 'http://g.tbcdn.cn/tm/buy/1.1.2/',
+        pattern : '/tm/buy/1.1.9/',
         responder : 'local',
         options : {
             file : '/gitlab/tm/buy/src/'
