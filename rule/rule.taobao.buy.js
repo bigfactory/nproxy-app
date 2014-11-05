@@ -10,7 +10,7 @@ module.exports = [
     },
 
     {
-        pattern : 'http://g.assets.daily.taobao.net/tb/buy/2.3.5/mt/??mods-dep-min.js,core-min.js',
+        pattern : 'http://g.assets.daily.taobao.net/tb/buy/2.3.9/mt/??mods-dep-min.js,core-min.js',
         responder : function(pattern, options, req, res, next){
             res.send('');
         }
@@ -28,7 +28,7 @@ module.exports = [
     
 
     {
-        pattern : 'http://g.assets.daily.taobao.net/tb/buy/2.3.5/mt/',
+        pattern : 'http://g.assets.daily.taobao.net/tb/buy/2.3.9/mt/',
         responder : 'local',
         options : {
             file : '/gitlab/tb/buy/mt/'
